@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import routes from './routes'
+import {connect} from 'react-redux'
 import './App.css';
 
 function App() {
@@ -11,4 +12,6 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = reduxState => reduxState
+
+export default connect(mapStateToProps)(App)
