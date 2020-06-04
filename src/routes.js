@@ -7,7 +7,7 @@ import Profile from './components/Profile'
 
 export default (
     <Switch>
-        <Route path='/' component={Landing}/>
+        <Route exact path='/' component={Landing}/>
         <Route path='/register' component={Register}/>
         <Route path='/dashboard' component={Dashboard}/>
         <Route path='/profile' component={Profile}/>
