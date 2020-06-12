@@ -1,13 +1,13 @@
 import React from 'react'
-import {link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 const Header = props => {
     return (
         <nav>
             <h1>Welcome to Twitumrechan™</h1>
             <div>
-                <link to='/dashboard'>Dashboard</link>
-                <link to='/profile'>Profile</link>
+                <Link to='/dashboard'>Dashboard</Link>
+                <Link to='/profile'>Profile</Link>
             </div>
         </nav>
     )

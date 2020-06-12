@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt')
 
 module.exports = {
-    login: async (req, res) =>{
+    login: async (req, res) => {
         const db = req.app.get('db')
         const {email, password} = req.body
 
@@ -21,13 +21,13 @@ module.exports = {
             }
         }
     },
-    register: async (req, res) =>{
+    register: async (req, res) => {
         const db = req.app.get('db')
         const {email, password} = req.body
 
-        const existingUSer = await db.check_user(email)
+        const existingUser = await db.check_user(email)
 
-        if (existingUSer[0]){
+        if (existingUser[0]){
             return res.status(409).send('User already exists')
         }
 
@@ -43,11 +43,11 @@ module.exports = {
 
         res.status(200).send(req.session.user)
     },
-    logout: (req, res) =>{
+    logout: (req, res) => {
         req.session.destroy()
         res.sendStatus(200)
     },
-    getUser: (req, res) =>{
+    getUser: (req, res) => {
         if(req.session.user) {
             res.status(200).send(req.session.user)
         } else {

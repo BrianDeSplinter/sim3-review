@@ -29,7 +29,7 @@ class Register extends Component {
             this.props.history.push('/dashboard')
         })
         .catch(err => {
-            alert('Could not register')
+            alert(err.response.data)
         })
     }
 
@@ -37,8 +37,8 @@ class Register extends Component {
         const {email, password} = this.state
         return (
             <div>
-                <form>
-                    onSubmit={(e) => this.register(e)}
+                <form
+                    onSubmit={(e) => this.register(e)}>
                     <input
                         type='text'
                         placeholder='email...'

@@ -26,7 +26,7 @@ class Landing extends Component {
         axios.post('/auth/login', {email, password})
         .then(res => {
             // redux magic
-            this.props.loginUser(res.date)
+            this.props.loginUser(res.data)
             this.props.history.push('/dashboard')
         })
         .catch(err => {
@@ -39,8 +39,8 @@ class Landing extends Component {
         console.log('Look ma, no hands!', this.props)
         return (
             <div>
-                <form>
-                    onSubmit={(e) => this.login(e)}
+                <form
+                    onSubmit={(e) => this.login(e)}>
                     <input
                         type='text'
                         placeholder='email...'
